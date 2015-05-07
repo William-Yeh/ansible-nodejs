@@ -11,9 +11,9 @@ script:
   - ./run 'docker build -f test/Dockerfile-centos6     -t nodejs_img .  &&  docker run -i nodejs_img > result-centos6    '
 
   - echo "==> Validating the test results..."
-  - [ -s result-ubuntu14.04 ]  ||  exit 1
-  - [ -s result-ubuntu12.04 ]  ||  exit 1
-  - [ -s result-debian8     ]  ||  exit 1
-  - [ -s result-debian7     ]  ||  exit 1
-  - [ -s result-centos7     ]  ||  exit 1
-  - [ -s result-centos6     ]  ||  exit 1
+  - [ -s result-ubuntu14.04 ]
+  - [ -s result-ubuntu12.04 ]
+  - [ -s result-debian8     ]
+  - [ -s result-debian7     ]
+  - [ -s result-centos7     ]
+  - [ -s result-centos6     ]
