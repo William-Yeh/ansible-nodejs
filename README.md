@@ -7,7 +7,7 @@ williamyeh.nodejs for Ansible Galaxy
 
 ## Summary
 
-Role name in Ansible Galaxy: **[williamyeh.nodejs](https://galaxy.ansible.com/list#/roles/XXX)**
+Role name in Ansible Galaxy: **[williamyeh.nodejs](https://galaxy.ansible.com/list#/roles/3669)**
 
 This Ansible role has the following features for [Node.js](http://nodejs.org/):
 
