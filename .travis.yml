@@ -3,12 +3,12 @@ install:
 
 script:
   - echo "==> Building the main Docker image..."
-  - ./run 'docker build -f test/Dockerfile-ubuntu14.04 -t nodejs_img .  &&  docker run -i nodejs_img > result-ubuntu14.04  &&  docker rmi -f nodejs_img'
-  - ./run 'docker build -f test/Dockerfile-ubuntu12.04 -t nodejs_img .  &&  docker run -i nodejs_img > result-ubuntu12.04  &&  docker rmi -f nodejs_img'
-  - ./run 'docker build -f test/Dockerfile-debian8     -t nodejs_img .  &&  docker run -i nodejs_img > result-debian8      &&  docker rmi -f nodejs_img'
-  - ./run 'docker build -f test/Dockerfile-debian7     -t nodejs_img .  &&  docker run -i nodejs_img > result-debian7      &&  docker rmi -f nodejs_img'
-  - ./run 'docker build -f test/Dockerfile-centos7     -t nodejs_img .  &&  docker run -i nodejs_img > result-centos7      &&  docker rmi -f nodejs_img'
-  - ./run 'docker build -f test/Dockerfile-centos6     -t nodejs_img .  &&  docker run -i nodejs_img > result-centos6      &&  docker rmi -f nodejs_img'
+  - ./run 'docker build -f test/Dockerfile-ubuntu14.04 -t nodejs_img .  &&  docker run -i nodejs_img > result-ubuntu14.04'
+  - ./run 'docker build -f test/Dockerfile-ubuntu12.04 -t nodejs_img .  &&  docker run -i nodejs_img > result-ubuntu12.04'
+  - ./run 'docker build -f test/Dockerfile-debian8     -t nodejs_img .  &&  docker run -i nodejs_img > result-debian8    '
+  - ./run 'docker build -f test/Dockerfile-debian7     -t nodejs_img .  &&  docker run -i nodejs_img > result-debian7    '
+  - ./run 'docker build -f test/Dockerfile-centos7     -t nodejs_img .  &&  docker run -i nodejs_img > result-centos7    '
+  #- ./run 'docker build -f test/Dockerfile-centos6     -t nodejs_img .  &&  docker run -i nodejs_img > result-centos6    '
 
   - echo "==> Validating the test results..."
   - sh -c "[ -s result-ubuntu14.04 ]"
@@ -16,4 +16,4 @@ script:
   - sh -c "[ -s result-debian8     ]"
   - sh -c "[ -s result-debian7     ]"
   - sh -c "[ -s result-centos7     ]"
-  - sh -c "[ -s result-centos6     ]"
+  #- sh -c "[ -s result-centos6     ]"
