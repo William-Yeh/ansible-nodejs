@@ -1,6 +1,5 @@
 install:
   - curl -sLo - http://j.mp/install-travis-docker | BRANCH=feature-bigstorage sh -xe
-  #- curl -sLo - https://github.com/moul/travis-docker/raw/master/install.sh | sh -xe
 
 script:
   - echo "==> Building the main Docker image..."
