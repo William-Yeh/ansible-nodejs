@@ -2,7 +2,7 @@
 williamyeh.nodejs for Ansible Galaxy
 ============
 
-[![Build Status](https://travis-ci.org/William-Yeh/ansible-nodejs.svg?branch=master)](https://travis-ci.org/William-Yeh/ansible-nodejs)
+[![Circle CI](https://circleci.com/gh/William-Yeh/ansible-nodejs.svg?style=shield)](https://circleci.com/gh/William-Yeh/ansible-nodejs)
 
 
 ## Summary
