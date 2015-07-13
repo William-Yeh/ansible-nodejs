@@ -7,23 +7,12 @@ dependencies:
     - docker info
     - docker version
 
-    - cp test/Dockerfile-ubuntu14.04 Dockerfile
-    - docker build  -t nodejs_trusty   .
-
-    - cp test/Dockerfile-ubuntu12.04 Dockerfile
-    - docker build  -t nodejs_precise  .
-
-    - cp test/Dockerfile-debian8 Dockerfile
-    - docker build  -t nodejs_jessie   .
-
-    - cp test/Dockerfile-debian7 Dockerfile
-    - docker build  -t nodejs_wheezy   .
-
-    - cp test/Dockerfile-centos7 Dockerfile
-    - docker build  -t nodejs_centos7  .
-
-    - cp test/Dockerfile-centos6 Dockerfile
-    - docker build  -t nodejs_centos6  .
+    - docker build  -f test/Dockerfile-ubuntu14.04  -t nodejs_trusty   .
+    - docker build  -f test/Dockerfile-ubuntu12.04  -t nodejs_precise  .
+    - docker build  -f test/Dockerfile-debian8      -t nodejs_jessie   .
+    - docker build  -f test/Dockerfile-debian7      -t nodejs_wheezy   .
+    - docker build  -f test/Dockerfile-centos7      -t nodejs_centos7  .
+    - docker build  -f test/Dockerfile-centos6      -t nodejs_centos6  .
 
 test:
   override:
