@@ -21,7 +21,7 @@
 
 
 - name: add NodeSource key
-  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
+  apt_key: data="{{ lookup('file', 'nodesource.gpg.key') }}" state=present
 
 
 
