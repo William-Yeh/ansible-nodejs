@@ -43,21 +43,30 @@
 
 
 
-- name: add NodeSource repository for io.js 1.x (deb)
-  apt_repository: repo='deb https://deb.nodesource.com/iojs_1.x {{ ansible_distribution_release|lower }} main' state=present
+- name: add NodeSource repository for io.js 3.x (deb)
+  apt_repository: repo='deb https://deb.nodesource.com/iojs_3.x {{ ansible_distribution_release|lower }} main' state=present
   when: iojs_version is defined
 
 - name: add NodeSource repository for io.js 2.x (deb)
   apt_repository: repo='deb https://deb.nodesource.com/iojs_2.x {{ ansible_distribution_release|lower }} main' state=present
   when: iojs_version is defined
 
-- name: add NodeSource repository for io.js 1.x (deb-src)
-  apt_repository: repo='deb-src https://deb.nodesource.com/iojs_1.x {{ ansible_distribution_release|lower }} main' state=present
+- name: add NodeSource repository for io.js 1.x (deb)
+  apt_repository: repo='deb https://deb.nodesource.com/iojs_1.x {{ ansible_distribution_release|lower }} main' state=present
+  when: iojs_version is defined
+
+- name: add NodeSource repository for io.js 3.x (deb-src)
+  apt_repository: repo='deb-src https://deb.nodesource.com/iojs_3.x {{ ansible_distribution_release|lower }} main' state=present
   when: iojs_version is defined
 
 - name: add NodeSource repository for io.js 2.x (deb-src)
   apt_repository: repo='deb-src https://deb.nodesource.com/iojs_2.x {{ ansible_distribution_release|lower }} main' state=present
   when: iojs_version is defined
+
+- name: add NodeSource repository for io.js 1.x (deb-src)
+  apt_repository: repo='deb-src https://deb.nodesource.com/iojs_1.x {{ ansible_distribution_release|lower }} main' state=present
+  when: iojs_version is defined
+
 
 
 

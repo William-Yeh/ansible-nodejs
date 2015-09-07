@@ -33,7 +33,7 @@ Pick one version to install:
 nodejs_version
 
 
-# io.js version; e.g., "1.8"
+# io.js version; e.g., "3.3"
 iojs_version
 ```
 
@@ -76,7 +76,7 @@ Simple example:
     - williamyeh.nodejs
 
   vars:
-    nodejs_version: 0.10
+    nodejs_version: 0.12
 ```
 
 
