@@ -29,7 +29,7 @@ None.
 Pick one version to install:
 
 ```yaml
-# Node.js version; e.g., "0.12"
+# Node.js version; e.g., "4.0", "0.12", "0.12.7"
 nodejs_version
 
 
@@ -76,7 +76,7 @@ Simple example:
     - williamyeh.nodejs
 
   vars:
-    nodejs_version: 0.12
+    nodejs_version: 4.0
 ```
 
 

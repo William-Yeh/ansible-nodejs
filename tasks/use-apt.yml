@@ -24,6 +24,9 @@
   apt_key: data="{{ lookup('file', 'nodesource.gpg.key') }}" state=present
 
 
+- name: add NodeSource repository for Node.js 4.0 (deb)
+  apt_repository: repo='deb https://deb.nodesource.com/node_4.x {{ ansible_distribution_release|lower }} main' state=present
+  when: nodejs_version is defined
 
 - name: add NodeSource repository for Node.js 0.12 (deb)
   apt_repository: repo='deb https://deb.nodesource.com/node_0.12 {{ ansible_distribution_release|lower }} main' state=present
@@ -31,6 +34,10 @@
 
 - name: add NodeSource repository for Node.js 0.10 (deb)
   apt_repository: repo='deb https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release|lower }} main' state=present
+  when: nodejs_version is defined
+
+- name: add NodeSource repository for Node.js 4.0 (deb-src)
+  apt_repository: repo='deb-src https://deb.nodesource.com/node_4.x {{ ansible_distribution_release|lower }} main' state=present
   when: nodejs_version is defined
 
 - name: add NodeSource repository for Node.js 0.12 (deb-src)
