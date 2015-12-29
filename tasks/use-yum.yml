@@ -24,11 +24,9 @@
 
 
 - name: install Node.js with specific version
-  yum: name={{ item }}  update_cache=yes  state=present
-  with_items: [ "nodejs-{{ nodejs_version }}*" ]
+  yum: name="nodejs-{{ nodejs_version }}*"  update_cache=yes  state=present
   when: nodejs_version is defined
 
 #- name: install io.js with specific version
-#  yum: name={{ item }}  update_cache=yes  state=present
-#  with_items: [ "iojs-{{ iojs_version }}*" ]
+#  yum: name="iojs-{{ iojs_version }}*"  update_cache=yes  state=present
 #  when: iojs_version is defined

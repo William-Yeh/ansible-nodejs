@@ -2,12 +2,12 @@
 williamyeh.nodejs for Ansible Galaxy
 ============
 
-[![Circle CI](https://circleci.com/gh/William-Yeh/ansible-nodejs.svg?style=shield)](https://circleci.com/gh/William-Yeh/ansible-nodejs)
+[![Build Status](https://travis-ci.org/William-Yeh/ansible-nodejs.svg?branch=master)](https://travis-ci.org/William-Yeh/ansible-nodejs) [![Circle CI](https://circleci.com/gh/William-Yeh/ansible-nodejs.svg?style=shield)](https://circleci.com/gh/William-Yeh/ansible-nodejs)
 
 
 ## Summary
 
-Role name in Ansible Galaxy: **[williamyeh.nodejs](https://galaxy.ansible.com/list#/roles/3669)**
+Role name in Ansible Galaxy: **[williamyeh.nodejs](https://galaxy.ansible.com/detail#/role/3669)**
 
 This Ansible role has the following features for [Node.js](http://nodejs.org/):
 

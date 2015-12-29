@@ -78,11 +78,9 @@
 
 
 - name: install Node.js with specific version
-  apt: name={{ item }}  update_cache=yes  state=present force=yes
-  with_items: [ "nodejs={{ nodejs_version }}*" ]
+  apt: name="nodejs={{ nodejs_version }}*"  update_cache=yes  state=present force=yes
   when: nodejs_version is defined
 
 - name: install io.js with specific version
-  apt: name={{ item }}  update_cache=yes  state=present force=yes
-  with_items: [ "iojs={{ iojs_version }}*" ]
+  apt: name="iojs={{ iojs_version }}*"  update_cache=yes  state=present force=yes
   when: iojs_version is defined
