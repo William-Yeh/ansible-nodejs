@@ -18,15 +18,25 @@
 
 
 
-- name: add NodeSource official repository for CentOS
-  yum: name=https://rpm.nodesource.com/pub/el/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/nodesource-release-el{{ ansible_distribution_major_version }}-1.noarch.rpm state=present
+- block:
 
+    - name: add NodeSource repository for Node.js 5.0
+      yum: name=https://rpm.nodesource.com/pub_5.x/el/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/nodesource-release-el{{ ansible_distribution_major_version }}-1.noarch.rpm state=present
+      when: nodejs_version | match('^5.*$')
 
+    - name: add NodeSource repository for Node.js 4.0
+      yum: name=https://rpm.nodesource.com/pub_4.x/el/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/nodesource-release-el{{ ansible_distribution_major_version }}-1.noarch.rpm state=present
+      when: nodejs_version | match('^4.*$')
 
-- name: install Node.js with specific version
-  yum: name="nodejs-{{ nodejs_version }}*"  update_cache=yes  state=present
+    - name: add NodeSource repository for Node.js 0.xx
+      yum: name=https://rpm.nodesource.com/pub/el/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/nodesource-release-el{{ ansible_distribution_major_version }}-1.noarch.rpm state=present
+      when: nodejs_version | match('^0.*$')
+
+    - name: install Node.js with specific version
+      yum: name="nodejs-{{ nodejs_version }}*"  update_cache=yes  state=present
+
   when: nodejs_version is defined
 
-#- name: install io.js with specific version
-#  yum: name="iojs-{{ iojs_version }}*"  update_cache=yes  state=present
-#  when: iojs_version is defined
+
+- fail: msg="io.js not supported for CentOS/RHEL."
+  when: iojs_version is defined

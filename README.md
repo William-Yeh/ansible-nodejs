@@ -7,11 +7,11 @@ williamyeh.nodejs for Ansible Galaxy
 
 ## Summary
 
-Role name in Ansible Galaxy: **[williamyeh.nodejs](https://galaxy.ansible.com/detail#/role/3669)**
+Role name in Ansible Galaxy: **[williamyeh.nodejs](https://galaxy.ansible.com/williamyeh/nodejs/)**
 
 This Ansible role has the following features for [Node.js](http://nodejs.org/):
 
- - Install specific version of Node.js (including [io.js](https://iojs.org/)).
+ - Install specific version of Node.js ([io.js](https://iojs.org/) is only supported under Debian/Ubuntu).
 
 
 
@@ -29,21 +29,23 @@ None.
 Pick one version to install:
 
 ```yaml
-# Node.js version; e.g., "4.0", "0.12", "0.12.7"
+# Node.js version; e.g., "5", "4.0", "0.12", "0.12.7"
 nodejs_version
 
 
 # io.js version; e.g., "3.3"
+# NOTE: only available under Debian/Ubuntu.
 iojs_version
 ```
 
-If neither `nodejs_version` nor `iojs_version` is defined, `nodejs_version` is defined automatically by `tasks/set-role-variables.yml` as:
+If neither `nodejs_version` nor `iojs_version` is defined, `nodejs_version` is defined automatically by `tasks/set-role-variables.yml` according to `defaults/main.yml` settings:
 
   - `nodejs_default_in_apt` for Debian/Ubuntu.
   - `nodejs_default_in_yum` for CentOS.
 
 
-User-configurable defaults:
+
+Other user-configurable defaults:
 
 ```yaml
 # install tools for compiling native addons from npm?
@@ -70,7 +72,7 @@ Simple example:
 # file: simple-playbook.yml
 
 - hosts: all
-  sudo: True
+  become: True
 
   roles:
     - williamyeh.nodejs
