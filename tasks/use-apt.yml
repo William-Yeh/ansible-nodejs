@@ -31,7 +31,7 @@
       with_items:
         - deb
         - deb-src
-      when: nodejs_version | match('^5.*$')
+      when: (nodejs_version|string) | match('^5.*$')
       #when: nodejs_version|version_compare('5.0', '>=')
 
 
@@ -40,7 +40,7 @@
       with_items:
         - deb
         - deb-src
-      when: nodejs_version | match('^4.*$')
+      when: (nodejs_version|string) | match('^4.*$')
       #when: nodejs_version|version_compare('4.0', '>=')
 
 
@@ -49,7 +49,7 @@
       with_items:
         - deb
         - deb-src
-      when: nodejs_version | match('^0.12.*$')
+      when: (nodejs_version|string) | match('^0.12.*$')
 
 
     - name: add NodeSource repository for Node.js 0.10
@@ -57,7 +57,7 @@
       with_items:
         - deb
         - deb-src
-      when: nodejs_version | match('^0.10.*$')
+      when: (nodejs_version|string) | match('^0.10.*$')
 
 
     - name: install Node.js with specific version

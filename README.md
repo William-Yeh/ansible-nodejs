@@ -30,6 +30,7 @@ Pick one version to install:
 
 ```yaml
 # Node.js version; e.g., "5", "4.0", "0.12", "0.12.7"
+# Both numeric and string forms are ok.
 nodejs_version
 
 
@@ -94,7 +95,10 @@ Licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
 
 ## History
 
-- 1.0 : From now on, the role installs Node.js from [NodeSource](https://github.com/nodesource/distributions) binary distributions.
+
+- 1.0 : Use Ansible 2.0 syntax; support up to Node.js 5.x.
+
+- Initial commit (2015-05-08): From now on, the role installs Node.js from [NodeSource](https://github.com/nodesource/distributions) binary distributions.
 
 
 
