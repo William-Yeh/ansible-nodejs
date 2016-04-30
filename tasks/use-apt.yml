@@ -26,6 +26,13 @@
 
 - block:
 
+    - name: add NodeSource repository for Node.js 6.0
+      apt_repository: repo='{{ item }} https://deb.nodesource.com/node_6.x {{ ansible_distribution_release|lower }} main' state=present
+      with_items:
+        - deb
+        - deb-src
+      when: (nodejs_version|string) | match('^6.*$')
+
     - name: add NodeSource repository for Node.js 5.0
       apt_repository: repo='{{ item }} https://deb.nodesource.com/node_5.x {{ ansible_distribution_release|lower }} main' state=present
       with_items:
